@@ -64,67 +64,13 @@ export default function Hero() {
             strokeWidth="2"
           />
         </svg>
-
-        {/* Straight Lines */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
-        >
-          {[...Array(3)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{
-                x: "-100%",
-                opacity: [0, 0.5, 0.5, 0],
-              }}
-              transition={{
-                duration: 2.5,
-                delay: i * 0.2,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "loop",
-                ease: "linear",
-              }}
-              className="absolute right-0"
-              style={{
-                top: `${15 + i * 10}%`,
-                height: "1.5px",
-                width: "100%",
-                background: `linear-gradient(90deg, transparent, ${
-                  i % 2 === 0 ? "#0ea5e9" : "#10b981"
-                }30, transparent)`,
-              }}
-            />
-          ))}
-        </motion.div>
       </div>
-
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 z-[1]">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute -left-1/4 top-1/4 h-96 w-96 rounded-full bg-emerald-500/20 blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute -right-1/4 top-1/2 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
-        />
-      </div>
-
-      {/* Noise Texture */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
       {/* Hero Content */}
       <div className="mx-auto max-w-7xl px-6 pt-0 pb-6 lg:flex lg:items-center lg:gap-x-10 lg:px-8 relative z-[2] -mt-12">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
-            className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            className="text-4xl font-bold tracking-tight text-white sm:text-6xl text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -134,7 +80,7 @@ export default function Hero() {
             </span>
           </motion.h1>
           <motion.p
-            className="mt-6 text-lg leading-8 text-emerald-300"
+            className="mt-6 text-lg leading-8 text-emerald-300 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -142,7 +88,7 @@ export default function Hero() {
             Compile minds run success
           </motion.p>
           <motion.div
-            className="mt-10 flex items-center gap-x-6"
+            className="mt-10 flex items-center justify-center lg:justify-start gap-x-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -161,37 +107,39 @@ export default function Hero() {
             </a>
           </motion.div>
         </div>
+
+        {/* ✅ Fixed Centering Issue */}
         <motion.div
-          className="mx-auto mt-8 lg:mt-0"
+          className="mx-auto mt-8 lg:mt-0 flex justify-center w-full"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="relative">
+          <div className="relative flex justify-center">
             {/* Glowing background element */}
-            <div 
-              className="absolute inset-0 flex items-center justify-center" 
+            <div
+              className="absolute inset-0 flex items-center justify-center"
               style={{
                 filter: "blur(40px) brightness(1.3)",
                 transform: "scale(0.95)",
                 opacity: 0.6,
-                zIndex: 0
+                zIndex: 0,
               }}
             >
               <img
                 src="/images/Student Chapter Logo.png"
                 alt=""
-                className="w-[400px] brightness-160 contrast-120"
+                className="w-[300px] md:w-[350px] lg:w-[400px] brightness-160 contrast-120"
               />
             </div>
-            
+
             {/* Main logo */}
             <img
               src="/images/Student Chapter Logo.png"
               alt="GfG logo"
               width={700}
               height={700}
-              className="w-[400px] rounded-2xl relative z-10"
+              className="w-[300px] md:w-[350px] lg:w-[400px] rounded-2xl relative z-10"
             />
           </div>
         </motion.div>

@@ -47,7 +47,7 @@ export default function Header() {
 
   return (
     <motion.header
-  className="sticky top-0 z-50 h-27 bg-black/35 backdrop-blur-lg m-0 p-0"
+  className="sticky top-0 z-50 h-27 bg-black/35 backdrop-blur-lg"
   initial={{ y: -90 }}
   animate={{ y: 0 }}
   transition={{ duration: 0.6, type: "spring", stiffness: 100, damping: 20 }}
@@ -109,23 +109,23 @@ export default function Header() {
       <div className="relative mx-auto max-w-7xl px-4 lg:px-6">
         <div className="flex items-center justify-between py-4">
           {/* Logo Section */}
-          <motion.div 
-            className="flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            {/* Persistent Glow Effect */}
-            <div className="absolute inset-0 w-20 h-20 mx-auto  bg-blue-400/70 blur-2xl brightness-110" />
-            
-            <Link href="/" className="m-1.5 p-1.5">
-              <span className="sr-only">Flowers & Saints</span>
-              <img
-                className="h-13 w-auto brightness-180 contrast-150"
-                src="/images/Logo.png"
-                alt="GfG Logo"
-              />
-            </Link>
-          </motion.div>
+            <motion.div 
+              className="relative flex-shrink-0"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              {/* Persistent Glow Effect */}
+              <div className="absolute -inset-0 w-23 h-21 mx-auto bg-blue-400/90 blur-2xl brightness-110" />
+              
+              <Link href="/" className="m-1.5 p-1.5">
+                <span className="sr-only">Flowers & Saints</span>
+                <img
+                  className="h-13 w-auto brightness-180 contrast-150"
+                  src="/images/Logo.png"
+                  alt="GfG Logo"
+                />
+              </Link>
+            </motion.div>
           
           {/* Enhanced Navigation Menu */}
           <div className="flex items-center">
